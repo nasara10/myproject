@@ -8,7 +8,7 @@ on:
 
 jobs:
   my_testing:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     
     steps:
      - name: Print Hello Message
@@ -16,7 +16,7 @@ jobs:
        
        
   my_deploy:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     needs: [my_testing]
     steps:
      - name: Print Hello Message
