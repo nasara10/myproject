@@ -8,14 +8,14 @@ on:
 
 jobs:
   my_testing_docker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
      - name: Print Hello Message
        run: |
         echo "Hello World from Testing Jobs 123 "
-        docker pull httpd
-        docker run -d --name docker-apache-NASARA -p 80:80 -d httpd 
+        #docker pull httpd
+        docker run -d --name docker-apache-NASARA -p 8080:80 -d httpd 
        
        
   
