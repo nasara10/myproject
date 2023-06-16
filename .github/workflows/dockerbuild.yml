@@ -15,7 +15,7 @@ jobs:
        run: |
         echo "Hello World from Testing Jobs 123 "
         #docker pull httpd
-        docker run -d --name docker-apache-NASARA -p 8080:80 -d httpd 
+        cd /root/odoo/ && docker compose up -d
        
        
   
