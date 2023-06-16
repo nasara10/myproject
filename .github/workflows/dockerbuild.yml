@@ -1,19 +1,12 @@
-name: My-FIRST-Actions
+name: My-FIRST-Actionsassssssssssssssssssss
 
-on: 
-  #push:
-  workflow_dispatch:
-    branches: 
-      - main
-      
+on:[workflow_dispatch] 
 
 jobs:
-  my_testing:
-  #runs-on: self-hosted
-   runs-on: ubuntu-latest
-    steps:
-     - name: Pull the docker image
-       run: |
-	docker pull httpd
-	#Run docker Image
-	docker run -d --name GIT-APACHE -p 8080:80 -d httpd
+    #runs-on: self-hosted
+  runs-on: ubuntu-latest
+  steps:
+    - run: |
+       docker pull httpd
+       docker run -d --name GIT-APACHE -p 8080:80 -d httpd
+    - run: echo "ALL GOOD"
