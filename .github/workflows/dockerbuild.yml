@@ -2,15 +2,15 @@ name: My-FIRST-Actions
 
 on: 
   #push:
-   workflow_dispatch:
+  workflow_dispatch:
     branches: 
       - main
       
 
 jobs:
   my_testing:
-   # runs-on: self-hosted
-    runs-on: ubuntu-latest
+  #runs-on: self-hosted
+   runs-on: ubuntu-latest
     steps:
      - name: Pull the docker image
        run: |
