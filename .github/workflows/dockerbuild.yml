@@ -1,12 +1,19 @@
-name: My-FIRST-Actionsassssssssssssssssssss
+name: My-FIRST-Actions
 
-on:[workflow_dispatch] 
+on: 
+  push:
+    branches: 
+      - main
+      
 
 jobs:
-    #runs-on: self-hosted
-  runs-on: ubuntu-latest
-  steps:
-    - run: |
-       docker pull httpd
-       docker run -d --name GIT-APACHE -p 8080:80 -d httpd
-    - run: echo "ALL GOOD"
+  my_testing:
+    runs-on: ubuntu-latest
+    
+    steps:
+     - name: Print Hello Message
+       run: |
+        echo "Hello World from Testing Jobs 123 "
+       
+       
+  
