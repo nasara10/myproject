@@ -11,12 +11,13 @@ jobs:
     runs-on: self-hosted
     
     steps:
-     - uses: actions/checkout@v2
+     -  name: Checkout
+        uses: actions/checkout@v3
      - name: Print Hello Message
        run: |
         echo "Hello World from Testing Jobs 123 "
         #docker pull httpd
-        cd /root/odoo/ && docker compose up -d
+        cd /root/odoo/ && docker compose down &&  docker compose up -d
        
        
   
