@@ -18,8 +18,8 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           # Restart Docker Service 
-          cd /root/odoo/ && docker compose down &&  docker compose up -d
-          
+          # cd /root/odoo/ && docker compose down &&  docker compose up -d
+           echo 'This is main site'
 
       - name: Deploy to development environment
         if: github.ref == 'refs/heads/development'
