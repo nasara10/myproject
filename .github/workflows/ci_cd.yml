@@ -17,11 +17,12 @@ jobs:
       - name: Deploy to production
         if: github.ref == 'refs/heads/main'
         run: |
-          echo this is main site
-          # Example: Deploy to a hosting platform or cloud provider
+          # Restart Docker Service 
+          cd /root/odoo/ && docker compose down &&  docker compose up -d
+          
 
       - name: Deploy to development environment
         if: github.ref == 'refs/heads/development'
         run: |
-          echo this is development  site
-          # Example: Deploy to a staging environment or development server
+          # Restart Docker Service
+          cd /root/odoo/ && docker compose down &&  docker compose up -d
