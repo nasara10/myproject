@@ -31,11 +31,11 @@ jobs:
       - name: Deploy to production
         if: github.ref == 'refs/heads/main'
         run: |
-          # Add your deployment steps for the main branch here
+          echo this is main site
           # Example: Deploy to a hosting platform or cloud provider
 
       - name: Deploy to development environment
         if: github.ref == 'refs/heads/development'
         run: |
-          # Add your deployment steps for the development branch here
+          echo this is dev site
           # Example: Deploy to a staging environment or development server
