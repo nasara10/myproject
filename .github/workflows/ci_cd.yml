@@ -13,17 +13,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
+        
       - name: Deploy to production
         if: github.ref == 'refs/heads/main'
         run: |
           # Restart Docker Service 
            cd /root/odoo/ && docker compose down &&  docker compose up -d
           # echo 'This is main site'
+          working-directory: /mnt/
 
       - name: Deploy to development environment
         if: github.ref == 'refs/heads/development'
         run: |
           # Restart Docker Service
           cd /root/odoo/ && docker compose down
+          working-directory: /opt/
           echo 'THIS IS DEV Branch'
