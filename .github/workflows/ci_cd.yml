@@ -25,5 +25,5 @@ jobs:
         if: github.ref == 'refs/heads/development'
         run: |
           # Restart Docker Service
-          cd /root/odoo/ && docker compose down &&  docker compose up -d
+          cd /root/odoo/ && docker compose down
           echo 'THIS IS DEV Branch'
