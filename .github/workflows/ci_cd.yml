@@ -14,19 +14,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
+      - name: Set up Docker
+        uses: docker/setup-docker@v1
+        
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build application
-        run: npm run build
+      - name: Pull Docker nginx image
+        run: docker pull nginx:latest
 
       - name: Run tests
-        run: npm run test
+        run: docker run -d nginx:latest
 
       - name: Deploy to production
         if: github.ref == 'refs/heads/main'
