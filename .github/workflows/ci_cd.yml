@@ -23,5 +23,5 @@ jobs:
       - name: Deploy to development environment
         if: github.ref == 'refs/heads/development'
         run: |
-          echo this is dev site
+          echo this is development  site
           # Example: Deploy to a staging environment or development server
